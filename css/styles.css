@@ -1,0 +1,41 @@
+/* Place your CSS styles in this file */
+
+h1 {
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: normal;
+}
+
+.titulo {
+text-align: center;
+font-size: 72px;
+color: red;
+}
+
+a { 
+	text-decoration: none;
+	color: blue;
+}
+
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #000000;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #000000;
+	}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+li {
+  display:block;
+  margin-bottom:20px;
+}

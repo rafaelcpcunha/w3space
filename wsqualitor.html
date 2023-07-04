@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+
+    </head>
+    <style>
+      .direta {
+      float: right;
+    }
+
+    .direita {
+    float: right;
+    }
+    </style>
+    <body>
+<h3>Modelo Stateless - acionar os WebServices do Qualitor sem a necessidade de manter permanência de sessão</h3>
+
+<form method='post' action="https://suportetihlg.net/ws/statelessws.php">
+
+<div class="direita">
+<label>Arquivo WSDL:</label>
+<select id="wsdl">
+  <option value="WSGeneral">WSGeneral</option>
+  <option value="WSTicket">WSTicket</option>
+  <option value="WSCharts">WSCharts</option>
+  <option value="WSChat">WSChat</option>
+  <option value="WSInventory">WSInventory</option>
+  <option value="WSKnowledgeBase">WSKnowledgeBase</option>
+  <option value="WSProduct">WSProduct</option>
+  <option value="WSTask">WSTask</option>
+</select>
+</div>
+<p>Operação:</p>
+<input type='text' name="operation" value="getTicket">
+<br>
+<br>
+Usuário: <br><input type='text' name="user" value="userws"><br>
+Senha: <br><input type='text' name="password" value="senha@123"><br>
+<div class="direita">Empresa: <br><input type='text' name="company" value="1"><br><br></div>
+<p>Conteúdo XML:</p>
+<br>
+<textarea cols=50 rows=10 name="input_xml" value=""></textarea><br>
+<input type=submit value="Executar">
+</form>
+<div class="direita">
+  <xmp>
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <wsqualitor>
+  <contents>
+  <data>
+  <cdcliente>1</cdcliente>
+  </data>
+  </contents>
+  </wsqualitor>
+  </xmp>
+  <xmp>
+  <cdcliente></cdcliente>
+  <nmmatricula></nmmatricula>
+  <nmloginweb></nmloginweb>
+  <nrcpfcnpj></nrcpfcnpj>
+  <cdcontato></cdcontato>
+  <nmcontato></nmcontato>
+  <dsemail></dsemail>
+  <idativo></idativo>
+  <idvip></idvip>
+  <cdcidade></cdcidade>
+  <cduf></cduf>
+  <nrtelefone></nrtelefone>
+  <nrcelular></nrcelular>
+  <nrcep></nrcep>
+  </xmp>
+  <ul>
+  <li>https://suporteti.rbs.com.br/ws/services/Charts/WSCharts.wsdl</li>
+  <li>https://suporteti.rbs.com.br/ws/services/Chat/WSChat.wsdl</li>
+  <li>https://suporteti.rbs.com.br/ws/services/General/WSGeneral.wsdl</li>
+  <li>https://suporteti.rbs.com.br/ws/services/Inventory/WSInventory.wsdl</li>
+  <li>https://suporteti.rbs.com.br/ws/services/KnowledgeBase/WSKnowledgeBase.wsdl</li>
+  <li>https://suporteti.rbs.com.br/ws/services/Product/WSProduct.wsdl</li>
+  <li>https://suporteti.rbs.com.br/ws/services/Task/WSTask.wsdl</li>
+  <li>https://suporteti.rbs.com.br/ws/services/Ticket/WSTicket.wsdl</li>
+  </ul>
+</div>
+<script src="/js/scroll.js"></script>
+</body>
+</html>

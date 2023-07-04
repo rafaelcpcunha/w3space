@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta charset="utf-8">
+<title>Chat Núbia</title>
+<link rel="stylesheet" href="styles.css">
+<style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #005290;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #005290;
+	}
+</style>
+</head>
+<body>
+	<span><a href='https://rafaelcpcunha.w3spaces.com'>Voltar</a></span>
+	<h1 class="titulo">Chat Núbia</h1>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+	var initESW = function(gslbBaseURL) {
+		embedded_svc.settings.displayHelpButton = true; //Ou falso
+		embedded_svc.settings.language = 'pt-BR'; //Por exemplo, insira "pt" ou "pt-BR"
+
+		embedded_svc.settings.defaultMinimizedText = 'Atendente disponível'; //(Assume como padrão o Chat com um especialista)
+		embedded_svc.settings.disabledMinimizedText = 'Atendente indisponível'; //(Assume como padrão Agente off-line)
+
+		embedded_svc.settings.loadingText = 'carregando'; //(Assume como padrão Carregando)
+		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Define o domínio de sua implantação para que seus visitantes possam navegar em subdomínios durante uma sessão de chat)
+
+		// Configurações para Chat
+		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+			// Returns a valid button ID.
+		//};
+		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Define o preenchimento automático de campos de formulário de pré-chat
+		//embedded_svc.settings.fallbackRouting = []; //Uma matriz de IDs de botão, IDs de usuário ou userId_buttonId
+		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Padronizado para Entre em contato conosco)
+
+		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+		embedded_svc.settings.entryFeature = 'LiveAgent';
+
+		embedded_svc.init(
+			'https://gruporbs--integra.sandbox.my.salesforce.com',
+			'https://gruporbs--integra.sandbox.my.site.com/portal',
+			gslbBaseURL,
+			'00D0q0000009f5U',
+			'Grupo_Chat_Teste_da_Nubia',
+			{
+				baseLiveAgentContentURL: 'https://c.la1-c1cs-ia6.salesforceliveagent.com/content',
+				deploymentId: '5720q0000004D7r',
+				buttonId: '573DJ000000Gnpo',
+				baseLiveAgentURL: 'https://d.la1-c1cs-ia6.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'Grupo_Chat_Teste_da_Nubia',
+				isOfflineSupportEnabled: false
+			}
+		);
+	};
+
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://gruporbs--integra.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
+</script>
+
+</body>
+</html>
